@@ -389,7 +389,10 @@ function buyVG(vg) {
     confirmButtonText: "Comprar",
     cancelButtonText: "Cancelar",
     preConfirm: function () {
-      var selectedClientId = document.getElementById("selectCliente").value;
+      debugger;
+      var selectedClientId = document.getElementById("selectCliente");
+      selectedClientId = selectedClientId.value;
+      console.log(selectedClientId);
       var selectedClient = listClients.find(function (client) {
         return client.idC === selectedClientId;
       });
@@ -413,6 +416,10 @@ function buyVG(vg) {
       });
     },
   });
+  var clientsSave = localStorage.getItem("clients");
+  var listClients = clientsSave ? JSON.parse(clientsSave) : [];
+
+  showPointsList(listClients);
 }
 // función para eliminar un videojuego desde la tarjeta en el DOM
 function deleteVG(vgId){
@@ -447,11 +454,12 @@ function showPointsList(clients){
     
     clients.forEach(function (cl) {
       var item = document.createElement("li");
-      var nameClient = document.createTextNode(cl.nameC + " " + cl.lastnameC);
+      var nameClient = document.createTextNode("Cliente: " + cl.nameC + " " + cl.lastnameC);
       var doc = document.createElement("p");
-      doc.textContent = cl.idC;
+      doc.textContent = "DI: " + cl.idC;
       var points = document.createElement("p");
-      points.textContent = cl.pointsC;
+      points.classList.add('printPoints');
+      points.textContent = "Puntos: " + cl.pointsC;
       item.appendChild(nameClient);
       item.appendChild(doc);
       item.appendChild(points);

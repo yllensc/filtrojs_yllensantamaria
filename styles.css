@@ -124,13 +124,13 @@ form {
 
 
 /*listas*/
-#listClients {
+#listClients, #lisPoints {
     list-style: none;
     padding: 0;
     margin: 0;
   }
   
-  #listClients li {
+  #listClients, #lisPoints {
     display: grid;
     grid-template-columns: repeat(1,1fr);
     gap: 10px;
@@ -142,8 +142,13 @@ form {
     margin-bottom: 5px;
   }
   
-  #listClients li p {
+  #listClients li p, #lisPoints li p{
     margin: 0;
+  }
+
+  #lisPoints li p.printPoints{
+    color:#7f239b;
+    font-weight:bolder;
   }
   
   #listClients li button {
