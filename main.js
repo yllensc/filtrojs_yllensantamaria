@@ -371,7 +371,7 @@ function buyVG(vg) {
     selectCliente.appendChild(option);
   });
 
-  // Obtener el precio y puntos de la ruta seleccionada
+  // Obtener el precio y puntos
   var valueLicence = vg.valueLicence;
   var valueFLoat = parseFloat(valueLicence);
   var iva = valueFLoat * 0.16;
@@ -397,7 +397,7 @@ function buyVG(vg) {
     preConfirm: function () {
       debugger;
       var selectedClientId = document.getElementById("selectCliente");
-      selectedClientId = selectedClientId.value;
+      selectedClientId = selectCliente.value;
       console.log(selectedClientId);
       var selectedClient = listClients.find(function (client) {
         return client.idC === selectedClientId;
