@@ -373,6 +373,10 @@ function buyVG(vg) {
 
   // Obtener el precio y puntos de la ruta seleccionada
   var valueLicence = vg.valueLicence;
+  var valueFLoat = parseFloat(valueLicence);
+  var iva = valueFLoat * 0.16;
+  var impuestoEspecial = valueFLoat * 0.04;
+  var valueLicenceTotal =  valueFLoat + iva + impuestoEspecial;
   var points = vg.points;
 
   // Mostrar el modal para confirmar la compra
@@ -380,7 +384,9 @@ function buyVG(vg) {
     title: "Confirmar compra",
     html: `
         <p>Resumen de la compra:</p>
-        <p>Precio total: ${valueLicence}</p>
+        <p>Precio $: ${valueLicence}</p>
+        <p>IVA $: ${iva}</p>
+        <p>Impuesto adicional $: ${impuestoEspecial}</p>
         <p>Puntos por la compra: ${points}</p>
         <p>Seleccione un cliente:</p>
         <select id="selectCliente">${selectCliente.innerHTML}</select>
@@ -396,8 +402,9 @@ function buyVG(vg) {
       var selectedClient = listClients.find(function (client) {
         return client.idC === selectedClientId;
       });
-
-
+      debugger;
+      var selectedClientId = document.getElementById("selectCliente");
+      selectedClientId = selectedClientId.value;
       // Actualizar el saldo de puntos del cliente
       selectedClient.pointsC = selectedClient.pointsC + parseInt(vg.points);
 
@@ -409,7 +416,7 @@ function buyVG(vg) {
         title: "Compra realizada",
         html: `
             <p>Resumen de la compra:</p>
-            <p>Precio total: ${valueLicence}</p>
+            <p>Precio total $: ${valueLicenceTotal}</p>
             <p>Puntos acumulados: ${selectedClient.pointsC}</p>
             <p>Cliente: ${selectedClient.nameC} ${selectedClient.lastnameC}</p>
           `,
