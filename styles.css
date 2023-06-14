@@ -206,6 +206,12 @@ form {
         grid-auto-flow: row;
         margin: auto;
     }
+    .card__container{
+      padding-top: 20px;
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(1,1fr);
+  }
     
   }
 
