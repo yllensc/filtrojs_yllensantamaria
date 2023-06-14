@@ -1,11 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Campus GameSoft</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    
+    <!--header-->
+    <header>
+        <h1>Campus GameSoft</h1>
+    </header>
+    <!--decoración-->
+    <div id="carouselDecoration" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselDecoration" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselDecoration" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselDecoration" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/videojuego1.jpg" class="imageDecoration" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="images/videojuego2.jpg" class="imageDecoration" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="images/videojuegos3.jpg" class="imageDecoration" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselDecoration" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselDecoration" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!--nav menu-->
+    <ul class="nav justify-content-center">
+        <li class="nav-item dropdown">
+            <i class="fa-solid fa-users"></i>
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                aria-expanded="false">Clientes</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalAddClients"
+                        id="btnAgregar">Agregar</a>
+                </li>
+                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalSeeCLients"
+                        id="btnListar">Ver clientes</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+            <i class="fa-solid fa-gamepad"></i>
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                aria-expanded="false">Videojuegos</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                        data-bs-target="#modalVideoGames">Agregar</a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <i class="fa-solid fa-star"></i>
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalPoints">Puntos</a>
+        </li>
+    </ul>
+    <!--cards videojuegos-->
+    <div class="card__container">
+
+    </div>
+    <!--modal registrar clientes-->
+    <div class="modal fade" id="modalAddClients" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="modalAddClientsLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalAddClientsLabel">Gestión de clientes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="addClient">
+                        <!--form registro de clientes-->
+                        <form id="formClients" action="">
+                            <div>
+                                <label for="identificacion">Número de identificación:</label>
+                                <input type="text" id="identificacion" name="identificacion" required>
+                            </div>
+
+                            <div>
+                                <label for="nombres">Nombres:</label>
+                                <input type="text" id="nombres" name="nombres" required>
+                            </div>
+
+                            <div>
+                                <label for="apellidos">Apellidos:</label>
+                                <input type="text" id="apellidos" name="apellidos" required>
+                            </div>
+
+                            <div>
+                                <label for="telefono">Teléfono:</label>
+                                <input type="tel" id="telefono" name="telefono" required>
+                            </div>
+
+                            <div>
+                                <label for="emailAg">Correo electrónico:</label>
+                                <input type="email" id="emailAg" name="emailAg" required>
+                            </div>
+
+                            <div>
+                                <label for="fechaNacimiento">Fecha de nacimiento:</label>
+                                <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+                            </div>
+
+                            <div>
+                                <label for="nacionalidad">Nacionalidad:</label>
+                                <input type="text" id="nacionalidad" name="nacionalidad" required>
+                            </div>
+
+                            <button type="submit">Enviar</button>
+                        </form>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--modal listar clientes-->
+    <div class="modal fade" id="modalSeeCLients" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="modalSeeCLientsLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalSeeCLientsLabel">Gestión de clientes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="divListClients">
+                        <div>
+                            <input type="text" id="inputBusqueda"
+                                placeholder="Buscar por nombre, apellidos o documento de identidad">
+                            <button id="btnBuscar">Buscar</button>
+                        </div>
+                        <br>
+                        <ul id="listClients">
+                            <!-- Lista de clientes -->
+                        </ul>
+                    </div>
+                    <div id="editClient">
+                        <!--form registro de clientes-->
+                        <form id="formClientsEdit" action="">
+                            <div>
+                                <label for="nombresEdit">Nombres:</label>
+                                <input type="text" id="nombresEdit" name="nombresEdit" required>
+                            </div>
+
+                            <div>
+                                <label for="apellidosEdit">Apellidos:</label>
+                                <input type="text" id="apellidosEdit" name="apellidosEdit" required>
+                            </div>
+
+                            <div>
+                                <label for="telefonoEdit">Teléfono:</label>
+                                <input type="tel" id="telefonoEdit" name="telefonoEdit" required>
+                            </div>
+
+                            <div>
+                                <label for="emailEdit">Correo electrónico:</label>
+                                <input type="email" id="emailEdit" name="emailEdit" required>
+                            </div>
+
+                            <div>
+                                <label for="fechaNacimientoEdit">Fecha de nacimiento:</label>
+                                <input type="date" id="fechaNacimientoEdit" name="fechaNacimientoEdit" required>
+                            </div>
+
+                            <div>
+                                <label for="nacionalidadEdit">Nacionalidad:</label>
+                                <input type="text" id="nacionalidadEdit" name="nacionalidadEdit" required>
+                            </div>
+
+                            <button type="submit" id="submitEdit">Guardar cambios</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--modal registrar videojuegos-->
+    <div class="modal fade" id="modalVideoGames" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="modalVideoGamesLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalVideoGamesLabel">Gestión de clientes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!--form registro de clientes-->
+                    <form id="formVideoGames" action="">
+                        <div>
+                            <label for="nombreVG">Nombre:</label>
+                            <input type="text" id="nombreVG" name="nombreVG" required>
+                        </div>
+                        <div>
+                            <label for="tematicaVG">Temática:</label>
+                            <input type="text" id="tematicaVG" name="tematicaVG" required>
+                        </div>
+                        <div>
+                            <label for="valorLicenciaVG">Valor licencia:</label>
+                            <input type="number" id="valorLicenciaVG" name="valorLicenciaVG" required>
+                        </div>
+                        <div>
+                            <label for="puntosVG">Puntos:</label>
+                            <input type="number" id="puntosVG" name="puntosVG" required>
+                        </div>
+                        <button type="submit" id="submitVideoGames">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--modal compras-->
+    <div class="modal fade" id="modalComprar" tabindex="-1" aria-labelledby="modalComprarLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalComprarLabel">Realizar compra del videojuego</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="formComprar">
+                <div class="mb-3">
+                  <label for="selectCliente" class="form-label">Cliente</label>
+                  <select class="form-select" id="selectCliente" name="selectCliente" required>
+                    <!-- Opciones de clientes generadas dinámicamente -->
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Realizar Compra</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!--modal puntos-->
+    <div class="modal fade" id="modalPoints" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="modalPointsLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalPointsLabel">Gestión de clientes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="divLisPoints">
+                        <ul id="lisPoints">
+                            <!-- Lista de clientes -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
 </body>
+
 </html>

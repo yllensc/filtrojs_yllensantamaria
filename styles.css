@@ -1,0 +1,206 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+/*header*/
+
+header{
+    height: 100px;
+    background-color: #6d217c;
+    
+}
+h1{
+    justify-content: center;
+    text-align: right;
+    padding-top: 20px;
+    color: #fff;
+}
+
+h5{
+    color: #fff;
+}
+
+/*carusel*/
+
+#carouselDecoration {
+    height: 300px; 
+    margin-bottom: 70px; 
+}
+.imageDecoration{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.nav {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 70px;
+    margin: 10px;
+}
+
+/*nav*/
+
+.nav-item {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #6d217c;
+    border-radius: 5px;
+}
+
+.nav-item i {
+    margin-bottom: 5px;
+    font-size: 30px;
+    color: #fff; 
+}
+
+.nav-link,.nav-link:active{
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-link:hover{
+    text-decoration: none;
+    color: #be99e0;
+}
+
+/*modales*/
+.modal-header{
+    background-color: #7f239b;
+}
+#btnBuscar {
+    padding: 5px 10px;
+    background-color: #61227e;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+/*forms*/
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  input{
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    margin-bottom: 10px;
+    transition: border-color 0.3s;
+    width: 100%;
+  }
+
+  input:focus {
+    outline: none;
+    border-color: #8c8c8c;
+  }
+
+  button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #3094ad;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #207f97;
+  }
+
+
+/*listas*/
+#listClients {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #listClients li {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 5px;
+  }
+  
+  #listClients li p {
+    margin: 0;
+  }
+  
+  #listClients li button {
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #3094ad;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #listClients li button.btn-delete {
+    background-color: rgb(224, 49, 49);
+    border-color: rgb(172, 77, 70); 
+  }
+
+/*cards*/
+.card__container{
+    padding-top: 20px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.card{
+    background-color: #99b5e0;
+}
+
+.card-body{
+    text-align: center;
+}
+
+.card-icon i{
+    margin-bottom: 5px;
+    font-size: 100px;
+    color: #faf9fc; 
+}
+
+.btn-buy, .btn-buy:hover, .btn-buy:active{
+    background-color: rgb(153, 97, 216);
+    border-color: rgb(160, 100, 187);
+    margin: 5px;
+}
+
+.btn-delete, .btn-delete:hover, .btn-delete:active{
+    background-color: rgb(224, 49, 49);
+    border-color: rgb(172, 77, 70); 
+}
+
+
+/*Ajuste celulares*/
+@media screen and (max-width: 767px) {
+    .nav {
+        width: 100%;
+        grid-auto-flow: row;
+        margin: auto;
+    }
+    
+  }
+
